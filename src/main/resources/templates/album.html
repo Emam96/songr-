@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>SONGR / Albums</title>
+</head>
+<body>
+<nav>
+    <span>SONGR</span>
+    <span><a href="/">Back</a></span>
+</nav>
+<div class="albums">
+    <table border="1">
+        <tr>
+
+            <th>title</th>
+            <th>artist</th>
+            <th>songCount</th>
+            <th>length</th>
+            <th>Cover</th>
+        </tr>
+        <tr th:each="album, state : ${albums}">
+
+            <td th:utext="${album.title}"></td>
+            <td th:utext="${album.artist}"></td>
+            <td th:utext="${album.songCount}"></td>
+            <td th:utext="${album.length}"></td>
+            <td ><img th:src="@{album.imageUrl}"
+                      th:title="${album.title}"
+                      th:alt="${album.title}" /></td>
+        </tr>
+    </table>
+
+</div>
+<footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>
+</body>
+</html>

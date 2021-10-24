@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+box-sizing: border-box;
+
+}
+
+html {
+color: white;
+height: 100%;
+width: 100%;
+background-image: url(https://images.pexels.com/photos/8038906/pexels-photo-8038906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+background-size: cover;
+font-family: 'Roboto', sans-serif;
+background-position-y: center;
+}
+
+
+
+nav {
+
+
+
+
+}
+
+nav span {
+position: absolute;
+left: 2rem;
+top: 1.5rem;
+font-size: 3pc;
+font-family: 'Oswald', sans-serif;
+font-weight: bolder;
+}
+
+nav ul {
+display: flex;
+flex-direction:column;
+position: absolute;
+
+
+width: 20%;
+
+right: 1.5rem;
+top: 10rem
+}
+
+
+ul li {
+
+margin-top: 2.5rem;
+}
+
+ul li a {
+text-decoration: none;
+color : white;
+font-size: 7.2pc;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+text-shadow: 12px 2px  0px blue;
+transition: 0.3s;
+}
+
+
+ul li a:hover {
+text-shadow: 12px 10px  0px red;
+
+}
+
+.cover {
+height: 15rem;
+width: 30%;
+margin-top: 6rem;
+margin-left: 0.5rem;
+
+}
+
+h1 {
+font-size: 7.2pc;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+text-shadow: 12px 2px  0px blue;
+user-select: none;
+}
+
+#ehe {
+  color: black;
+}
+
+#eh {
+  color: red;
+}
+
+footer {
+position: absolute;
+display: flex;
+justify-content: center;
+font-size: 1.2pc;
+width: 90%;
+left: 5rem;
+bottom: 1rem;
+
+
+}
