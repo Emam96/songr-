@@ -102,3 +102,17 @@ bottom: 1rem;
 
 
 }
+
+#back {
+margin-top: 5rem;
+
+}
+
+.albums {
+font-size: 1.5pc;
+width: 50%;
+height: 35rem;
+margin: 5rem auto;
+overflow: auto;
+
+}
