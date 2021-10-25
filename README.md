@@ -6,7 +6,7 @@
 
 1. Clone this repo
 2. Build with gradle
-3. run it with spring boot and navigate to "/"
+3. run it with spring boot (./gradlew bootRun) and navigate to "/"
 4. navigate the app
 
 ## Routes 
