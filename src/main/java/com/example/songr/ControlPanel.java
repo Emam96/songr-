@@ -45,7 +45,12 @@ AlbumCrud albumCrud;
 
 
 
-
+    @PostMapping("/allalbums")
+    public RedirectView addAlbumToDB(Model model, @RequestParam(value="title") String title, @RequestParam(value="artist") String artist, @RequestParam(value="songCount") String songCount, @RequestParam(value="length") String length, @RequestParam(value="imageUrl") String imageUrl){
+        Album album = new Album(title,artist,songCount,length,imageUrl);
+        albumCrud.save(album);
+        return new RedirectView("/allalbums");
+    }
 
 
 

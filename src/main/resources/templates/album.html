@@ -31,15 +31,14 @@
 
 </div>
 
-       <h1>Form</h1>
-    <form action="/album"  method="post">
-    <p>title: <input type="text" th:field="*{title}" /></p>
-    <p>Artist: <input type="text" th:field="*{artist}" /></p>
-    <p>Song Count: <input type="text" th:field="*{songCount}" /></p>
-    <p>Length: <input type="text" th:field="*{length}" /></p>
-    <p>image: <input type="text" th:field="*{imageUrl}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+<form action="/allalbums" method="POST">
+    <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
+    <label for="artist">Artist:  <input type="text" name="artist" id="artist"> </label><br>
+    <label for="songCount">Song Count:  <input type="text" name="songCount" id="songCount"> </label><br>
+    <label for="length">Length:  <input type="text" name="length" id="length"> </label><br>
+    <label for="imageUrl">Image URL: <input type="text" name="imageUrl" id="imageUrl"> </label><br>
+    <input type="submit" value="Add Album">
+</form>
 <footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>
 </body>
 </html>
