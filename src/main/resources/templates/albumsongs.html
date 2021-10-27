@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>SONGR / Albums</title>
+</head>
+<body>
+<nav>
+    <span>SONGR</span>
+    <span id="back"><a href="/allalbums">Back</a></span>
+</nav>
+<div class="albums">
+    <div  th:each="song : ${songs}">
+        <p>Title: <span th:text=${song.title}></span></p>
+        <p>Length: <span th:text="${song.length}"></span></p>
+        <p>Track: <span th:text="${song.trackNumber}"></span></p>
+        <hr>
+    </div>
+
+
+
+
+</div>
+
+<form action="/albumsongs" method="POST">
+    <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
+    <label for="length">Length:  <input type="text" name="length" id="length"> </label><br>
+    <label for="trackNumber">Image URL: <input type="number" name="trackNumber" id="trackNumber"> </label><br>
+    <input type="submit" value="Add Song">
+</form>
+<footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>
+</body>
+</html>

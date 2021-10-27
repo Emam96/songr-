@@ -13,7 +13,7 @@
 <body>
 <nav>
     <span>SONGR</span>
-    <span id="back"><a href="/">Back</a></span>
+    <span class="back"><a href="/">Back</a></span>
 </nav>
 <div class="albums">
 <div  th:each="album : ${albums}">
@@ -23,7 +23,8 @@
     <p>Length: <span th:text="${album.length}"></span></p>
 
     <img  th:src=@{${album.imageUrl}}>
-
+    <span class="back"><a href="/albumsongs">See Songs</a></span>
+<hr>
 </div>
 
 
