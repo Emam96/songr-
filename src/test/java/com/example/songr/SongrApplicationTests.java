@@ -1,5 +1,6 @@
 package com.example.songr;
 
+import com.example.songr.models.Album;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

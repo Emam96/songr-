@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,13 +14,14 @@
 <body>
 <nav>
     <span>SONGR</span>
-    <span id="back"><a href="/allalbums">Back</a></span>
+    <span id="back"><a href="/album">Back</a></span>
 </nav>
 <div class="albums">
-    <div  th:each="song : ${songs}">
+    <div th:each="song : ${albums.songs}">
+
         <p>Title: <span th:text=${song.title}></span></p>
         <p>Length: <span th:text="${song.length}"></span></p>
-        <p>Track: <span th:text="${song.trackNumber}"></span></p>
+        <p>Track Number: <span th:text="${song.trackNumber}"></span></p>
         <hr>
     </div>
 
@@ -28,10 +30,10 @@
 
 </div>
 
-<form action="/albumsongs" method="POST">
+<form th:action="${'/addsong/'+albums.id}" method="POST">
     <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
-    <label for="length">Length:  <input type="text" name="length" id="length"> </label><br>
-    <label for="trackNumber">Image URL: <input type="number" name="trackNumber" id="trackNumber"> </label><br>
+    <label for="length">Length:  <input type="number" name="length" id="length"> </label><br>
+    <label for="trackNumber">trackNumber: <input type="number" name="trackNumber" id="trackNumber"> </label><br>
     <input type="submit" value="Add Song">
 </form>
 <footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>

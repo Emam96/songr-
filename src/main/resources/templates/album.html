@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/cover.css" />
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>SONGR / Albums</title>
@@ -13,26 +15,12 @@
 <body>
 <nav>
     <span>SONGR</span>
-    <span class="back"><a href="/">Back</a></span>
+    <span class="edit" ><a href="/">Back</a></span>
 </nav>
-<div class="albums">
-<div  th:each="album : ${albums}">
-    <p>Title: <span th:text=${album.title}></span></p>
-    <p>Artist: <span th:text="${album.artist}"></span></p>
-    <p>Song Count: <span th:text="${album.songCount}"></span></p>
-    <p>Length: <span th:text="${album.length}"></span></p>
-
-    <img  th:src=@{${album.imageUrl}}>
-    <span class="back"><a href="/albumsongs">See Songs</a></span>
-<hr>
-</div>
 
 
 
-
-</div>
-
-<form action="/allalbums" method="POST">
+<form action="/album" method="POST">
     <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
     <label for="artist">Artist:  <input type="text" name="artist" id="artist"> </label><br>
     <label for="songCount">Song Count:  <input type="text" name="songCount" id="songCount"> </label><br>
@@ -40,6 +28,39 @@
     <label for="imageUrl">Image URL: <input type="text" name="imageUrl" id="imageUrl"> </label><br>
     <input type="submit" value="Add Album">
 </form>
+
+
+
+<div class="albums">
+<div  th:each="album : ${albums}">
+    <p>Title: <span th:text=${album.title}></span></p>
+    <p>Artist: <span th:text="${album.artist}"></span></p>
+    <p>Song Count: <span th:text="${album.songCount}"></span></p>
+    <p>Length: <span th:text="${album.length}"></span></p>
+<!--    <p>id: <span th:text="${album.id}"></span></p>-->
+    <img  th:src=@{${album.imageUrl}}>
+<!--    <span class="back"><a th:href="@{/albumpage/+album.id}">See Songs</a></span>-->
+    <span class="back"><a th:href="${'/albumpage/'+album.id}"> songs</a></span>
+<!--    <form th:action="${'/albumpage/'+album.id}" methods="GET">-->
+<!--        <label>see songs<input type="submit" value="Add song"></label><br>-->
+<!--    </form>-->
+
+
+<hr>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
 <footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>
 </body>
 </html>
