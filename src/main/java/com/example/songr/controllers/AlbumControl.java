@@ -1,7 +1,9 @@
 package com.example.songr.controllers;
 
 import com.example.songr.models.Album;
+import com.example.songr.models.Song;
 import com.example.songr.repos.AlbumCrud;
+import com.example.songr.repos.SongCrud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +19,8 @@ public class AlbumControl {
 
     @Autowired
     AlbumCrud albumCrud;
-
+    @Autowired
+    SongCrud songCrud;
 
     @GetMapping("/album")
     public  String addAlbum(Model model){
@@ -46,8 +49,33 @@ public class AlbumControl {
     public String getSpecificAlbums(Model model ,@PathVariable long id){
             Album album =  albumCrud.findById(id).get();
         model.addAttribute("albums",album);
+
             return "songs";
 
     }
+
+
+    @PostMapping("/songs/{id}")
+    public String addSongToDB(Model model , @PathVariable long id,
+                              @RequestParam(value="title")String title,
+                              @RequestParam(value="length")int length,
+                              @RequestParam(value="trackNumber")int trackNumber)
+    {
+
+        Album album = new Album();
+        if (albumCrud.findById(id).isPresent()){
+            album = albumCrud.findById(id).get();
+        } else {
+
+            return "error";
+        }
+        model.addAttribute("albums", album);
+        Song song = new Song(title, length,trackNumber,album);
+        songCrud.save(song);
+
+        return "songs";
+
+    }
+
 
 }

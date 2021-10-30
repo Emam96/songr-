@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,30 +22,17 @@ public class SongControl {
     AlbumCrud albumCrud;
 
 
-//@GetMapping ("/songs/{id}")
-//public String getSpecificAlbums(Model model ,@PathVariable long id){
-//    Album album =  albumCrud.findById(id).get();
-//    model.addAttribute("album",album);
-//    return "songs";
+//    @GetMapping("/songs")
+//    public  String addAlbum(Model model){
 //
-//}
-
-    @PostMapping("/addsong/{id}")
-    public String addSongToDB(Model model , @PathVariable long id,
-                              @RequestParam(value="title")String title,
-                              @RequestParam(value="length")int length,
-                              @RequestParam(value="trackNumber")int trackNumber)
-    {
+//        List<Song> data = (ArrayList<Song>) songCrud.findAll();
+//        model.addAttribute("songs", data);
+//        return "songs";
+//    }
 
 
-            Album album = albumCrud.findById(id).get();
 
-            Song song = new Song(title, length,trackNumber,album);
-            songCrud.save(song);
-            model.addAttribute("albums", song);
-        return "test";
 
-    }
 
 
 }

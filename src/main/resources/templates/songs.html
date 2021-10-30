@@ -16,6 +16,14 @@
     <span>SONGR</span>
     <span id="back"><a href="/album">Back</a></span>
 </nav>
+<form th:action="${'/songs/'+albums.id}" method="POST">
+    <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
+    <label for="length">Length:  <input type="number" name="length" id="length"> </label><br>
+    <label for="trackNumber">trackNumber: <input type="number" name="trackNumber" id="trackNumber"> </label><br>
+    <input type="submit" value="Add Song">
+</form>
+
+
 <div class="albums">
     <div th:each="song : ${albums.songs}">
 
@@ -30,12 +38,7 @@
 
 </div>
 
-<form th:action="${'/addsong/'+albums.id}" method="POST">
-    <label for="title">Title:  <input type="text" name="title" id="title"> </label><br>
-    <label for="length">Length:  <input type="number" name="length" id="length"> </label><br>
-    <label for="trackNumber">trackNumber: <input type="number" name="trackNumber" id="trackNumber"> </label><br>
-    <input type="submit" value="Add Song">
-</form>
+
 <footer><SPAN>All Rights Reserved 	&copy;  Emam Shararah</SPAN></footer>
 </body>
 </html>
